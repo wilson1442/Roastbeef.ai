@@ -1,0 +1,14 @@
+import bcrypt from 'bcryptjs';
+import crypto from 'crypto';
+
+export async function hashPassword(password: string): Promise<string> {
+  return bcrypt.hash(password, 12);
+}
+
+export async function verifyPassword(password: string, hashedPassword: string): Promise<boolean> {
+  return bcrypt.compare(password, hashedPassword);
+}
+
+export function generateVerificationToken(): string {
+  return crypto.randomBytes(32).toString('hex');
+}
