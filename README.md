@@ -12,27 +12,40 @@ A playful website roasting service that uses AI to roast websites submitted by u
 
 ## Getting Started
 
-1. Install dependencies:
+### Quick Start
+
+1. **Install dependencies:**
 ```bash
 npm install
 ```
 
-2. Set up environment variables:
-```bash
-cp .env.local.example .env.local
-# Edit .env.local with your actual values
-```
+2. **Set up MongoDB:**
+   - **Local MongoDB:** Install MongoDB locally (see [LOCAL_SETUP.md](LOCAL_SETUP.md))
+   - **MongoDB Atlas:** Create a free cluster at [mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas)
 
-3. Run the development server:
+3. **Set up environment variables:**
+   Create a `.env.local` file in the root directory:
+   ```env
+   MONGODB_URI=mongodb://localhost:27017/roastbeef
+   NEXTAUTH_SECRET=your-secret-key-here
+   NEXTAUTH_URL=http://localhost:3000
+   # ... see LOCAL_SETUP.md for full list
+   ```
+
+4. **Run the development server:**
 ```bash
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Local Development
+
+For detailed local setup instructions including MongoDB installation, see [LOCAL_SETUP.md](LOCAL_SETUP.md).
+
 ## Environment Variables
 
-See `.env.local.example` for all required environment variables.
+See [LOCAL_SETUP.md](LOCAL_SETUP.md) for all required environment variables and setup instructions.
 
 ## Tech Stack
 
